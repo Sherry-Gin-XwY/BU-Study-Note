@@ -1,31 +1,29 @@
-function addEmployee(){
-    window.location.href = '/employees/add';
-}
+// This page is working for the click action
 
-function cancelAdd(){
-    window.location.href = '/employees';
-}
-
-function cancelDelete(){
-    window.location.href = '/employees';
-}
-
-////////////////////////////////////////////////////////
 // Manage shops
 
-// add shop
+// add shop -> to the manage addShop page
 function addShop() {
     window.location.href = '/shops/manageShopAdd';
 }
 
-// cancel add shop
+// cancel add shop -> back to the manage shops page
 function cancelAddShop() {
     window.location.href = '/shops';
 }
 
-// cancel delete shop
+// cancel delete shop -> back to the manage shops page
 function cancelDeleteShop() {
     window.location.href = '/shops';
 }
 
+////////////////////////////////////////////////////////
+// Homepage
+function toTheRegister() {
+    window.location.href = '/Register';
+}
 
+// Cancel Register -> back to the home page
+function cancelRegister() {
+    window.location.href = '/homepage';
+}

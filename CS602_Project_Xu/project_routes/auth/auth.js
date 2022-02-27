@@ -31,7 +31,7 @@ exports.register = async (req, res, next) => {
 };
 
 
-exports.login = async (req, res, next) => {
+/* exports.login = async (req, res, next) => {
     const {username, password } = req.body
     // Check if username and password is provided
     if(!username || !password) {
@@ -64,7 +64,7 @@ exports.login = async (req, res, next) => {
             error: error.message,
         })
     }
-}
+} */
 
 exports.update = async (req,res, next) => {
     const { role, id } = req.body;

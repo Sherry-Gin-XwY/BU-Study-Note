@@ -13,18 +13,19 @@ var editShop                = require("./manageShop/4editShop");                
 var saveShop 			          = require("./manageShop/3saveShop");                   // 1saveShop.js
 var saveShopAfterEdit       = require("./manageShop/5saveShopAfterEdit");          // 1saveShopAfterEdit.js
 
-// home Page modules (定义主页的认证的router)
-const { register, login, update, deleteUser } = require("./auth/auth");
 
 
 // router specs
 
 // router specs (控制每个网站的去向)
-
+/*
 router.get('/', function(req, res, next) {
   res.redirect('/shops');
 });
-
+ */
+router.get('/', function(req, res, next) {
+  res.redirect('/homepage');
+});
 
 ////////////////////////////////////////////////////////////////////////////
 // manage shops
@@ -41,11 +42,19 @@ router.post('/shops/manageShopEdit/',      saveShopAfterEdit);
 router.get('/shops/manageShopDelete/:id',    deleteShop);
 router.post('/shops/manageShopDelete',        deleteShopAfterConfirm);
 
+
+// home Page modules (定义主页认证的router)
+var displayHomePage = require("./homePage/1displayHomePage");
+const { register, login, update, deleteUser } = require("./auth/auth");
+var loginPage = require("./homePage/2login")
+
 // homepage auth
+// display home page
+router.get('/homepage',         displayHomePage);
 // register router
 router.route("/register").post(register);
 // login router
-router.route("/login").post(login);
+router.route("/homepage").post(loginPage);
 // Update router
 router.route("/update").put(update);
 // Delete router
