@@ -1,27 +1,30 @@
 <div>
     <div class="table-responsive">
-        <table class="table table-condensed">
-            <tbody>
-                <tr>
-                    <th>Username: </th>
-                    <td><input type="text" name="username" required placeholder="Please enter the user name"></td>
-                </tr>
+        <form method="post" action="/register">
+            <table class="table table-condensed">
+                <tbody>
+                    <tr>
+                        <th>Username: </th>
+                        <td><input type="text" name="username" required placeholder="Please enter the user name"></td>
+                    </tr>
 
-                <tr>
-                    <th>Password</th>
-                    <td><input type="password" name="password" required placeholder="Please enter the password"></td>
-                </tr>
-            </tbody>
+                    <tr>
+                        <th>Password</th>
+                        <td><input type="password" name="password" required placeholder="Please enter the password">
+                        </td>
+                    </tr>
+                </tbody>
 
-            <tfooter>
-                <tr>
-                    <td></td>
-                    <td>
-                        <input type="submit" value="Login" class="btn btn-primary">
-                    </td>
-                </tr>
-            </tfooter>
-        </table>
-
+                <tfooter>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="submit" value="Register" class="btn btn-success">
+                            <input type="button" value="Cancel" class="btn btn-danger" onclick="cancelRegister()">
+                        </td>
+                    </tr>
+                </tfooter>
+            </table>
+        </form>
     </div>
 </div>

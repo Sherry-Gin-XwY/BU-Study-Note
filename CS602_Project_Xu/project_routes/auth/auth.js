@@ -2,6 +2,7 @@
 const bcrypt = require("bcryptjs/dist/bcrypt");
 const User = require("../../DB/userDB");
 
+/*
 exports.register = async (req, res, next) => {
     const { username, password } = req.body;
     if (password.length < 6) {
@@ -27,10 +28,9 @@ exports.register = async (req, res, next) => {
         );
     });
 
-    // TODO: 需要网站导航
 };
 
-
+ */
 /* exports.login = async (req, res, next) => {
     const {username, password } = req.body
     // Check if username and password is provided
