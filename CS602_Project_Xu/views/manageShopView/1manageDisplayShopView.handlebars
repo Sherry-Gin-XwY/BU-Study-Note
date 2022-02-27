@@ -1,0 +1,40 @@
+<div>
+    <div class="table-responsive">
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <td>
+                        <button class="btn btn-primary" onClick="addShop();">Add</button>
+                    </td>
+                </tr>
+            </thead>
+            {{#if data}}
+            <thread>
+                <tr style=font-size:30px>
+                    <th>Shop Name</th>
+                    <th>Amount</th>
+                    <th>Operation</th>
+                </tr>
+            </thread>
+            {{else}}
+            <tr>
+                <td colspan="3">No Shop found ... Add One!</td>
+            </tr>
+            {{/if}}
+            <tbody>
+                {{#each data}}
+                <tr>
+                    <td>{{this.shopName}}</td>
+                    <td>{{this.amount}}</td>
+
+                    <td>
+                        <a href="/shops/manageShopEdit/{{this.id}}">Edit</a> |
+                        <a href="/shops/manageShopDelete/{{this.id}}">Delete</a>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+
+        </table>
+    </div>
+</div>
