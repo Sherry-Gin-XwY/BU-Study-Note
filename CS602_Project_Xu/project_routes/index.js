@@ -46,12 +46,14 @@ router.post('/shops/manageShopDelete',        deleteShopAfterConfirm);
 // home Page modules (定义主页认证的router)
 var displayHomePage = require("./homePage/1displayHomePage");
 const { register, login, update, deleteUser } = require("./auth/auth");
-var loginPage = require("./homePage/2login")
+var displayRegisterPage = require("./homePage/3displayRegister");
+var loginPage = require("./homePage/2login");
 
 // homepage auth
 // display home page
 router.get('/homepage',         displayHomePage);
 // register router
+router.get('/register',         displayRegisterPage);
 router.route("/register").post(register);
 // login router
 router.route("/homepage").post(loginPage);
