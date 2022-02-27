@@ -13,24 +13,15 @@ var editShop                = require("./manageShop/4editShop");                
 var saveShop 			          = require("./manageShop/3saveShop");                   // 1saveShop.js
 var saveShopAfterEdit       = require("./manageShop/5saveShopAfterEdit");          // 1saveShopAfterEdit.js
 
-
-
-// router specs
-
 // router specs (控制每个网站的去向)
-/*
-router.get('/', function(req, res, next) {
-  res.redirect('/shops');
-});
- */
+
+// 默认页面(default page)
 router.get('/', function(req, res, next) {
   res.redirect('/homepage');
 });
 
-////////////////////////////////////////////////////////////////////////////
-// manage shops
-
-// manage to display shop
+// （管理者）manage shops
+// manage to display shop (定义mange管理shop的router)
 router.get('/shops',           displayShop);
 // manage to add shop
 router.get('/shops/manageShopAdd',        addShop);
@@ -42,7 +33,6 @@ router.post('/shops/manageShopEdit/',      saveShopAfterEdit);
 router.get('/shops/manageShopDelete/:id',    deleteShop);
 router.post('/shops/manageShopDelete',        deleteShopAfterConfirm);
 
-
 // home Page modules (定义主页认证的router)
 var displayHomePage = require("./homePage/1displayHomePage");
 const { update, deleteUser } = require("./auth/auth");
@@ -50,7 +40,7 @@ var displayRegisterPage = require("./homePage/3displayRegister");
 var login = require("./homePage/2login");
 var register = require("./homePage/4register");
 
-// homepage auth
+// (主页）homepage auth
 // display home page
 router.get('/homepage',         displayHomePage);
 // register router
@@ -62,5 +52,15 @@ router.route("/homepage").post(login);
 router.route("/update").put(update);
 // Delete router
 router.route("/deleteUser").delete(deleteUser);
+
+// 顾客（Customer）
+// customer shops modules (定义customer的router)
+var displayCustomerShops = require("./customerShop/1displayShop");
+
+// customer shop auth
+// display customer shops page
+router.get('/customerShopPage/:id', displayCustomerShops);
+
+
 
 module.exports = router;

@@ -19,7 +19,7 @@ module.exports = async (req, res, next) => {
                 password: hash,
             })
             .then((user) =>
-                res.redirect(200, '/homepage')
+                res.redirect('/homepage')
 /*                 res.status(200).json({
                     message: "User successfully created",
                     user,

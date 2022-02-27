@@ -5,7 +5,7 @@ const User = require('../../DB/userDB');
 
 module.exports = async (req, res, next) => {
 
-    const {username, password } = req.body
+    const {username, password} = req.body
     // Check if username and password is provided
     if(!username || !password) {
         return res.status(400).json({
@@ -23,10 +23,15 @@ module.exports = async (req, res, next) => {
             // comparing given password with hashed password
             bcrypt.compare(password, user.password)
             .then(function (result) {
-
-                result
-                ? res.redirect('/shops')
-                : res.status(400).json ({ message: "Login not successful"})
+                if (result) {
+                    if (user.role === 'admin') {
+                        res.redirect('/shops/');
+                    } else {
+                        res.redirect('/customerShopPage/'+ user.id);
+                    }
+                } else {
+                    res.status(400).json ({ message: "Login not successful"})
+                }
             })
         }
     } catch (error) {
