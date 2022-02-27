@@ -35,7 +35,7 @@ process.on("unhandledRejection", err => {
 })
 
 app.use(express.json());
-app.use("/api/auth", require("./project_routes/index"))
+app.use("/auth", require("./project_routes/index"))
 
 
 app.use(function(req, res) {
