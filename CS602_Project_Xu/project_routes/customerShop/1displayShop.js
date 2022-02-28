@@ -21,7 +21,33 @@ module.exports = async (req, res, next) => {
         };
     });
 
-    res.render('customerShopView/1customerDisplayShopView',
-            {title: "List of Shops", data: result, customerId});
+    res.format({
+        // JSON format
+        'application/json': function() {
+            res.json(result);
+        },
+
+        // xml format
+        'application/xml': function() {
+            let resultXml =
+            '<?xml version="1.0"?>\n' +
+            '<id="' + result.id + '">\n' +
+            '<customerId>' + result.customerId + '</customerId>\n' +
+            '<shopName>' + result.shopName + '</shopName>\n' +
+            '<amount>' + result.amount + '</amount>\n' +
+            '<price>' + result.price + '</price>\n' +
+            '</id>\n';
+
+            res.type('application/xml');
+            res.send(resultXml);
+        },
+
+
+        'text/html':function() {
+            res.render('customerShopView/1customerDisplayShopView',
+                {title: "List of Shops", data: result, customerId});
+    }
+
+})
 
 };
