@@ -1,0 +1,76 @@
+<div class="table-responsive">
+    <form method="post" action="/customerShopPage/shoppingCart/customerShoppingCartEdit/{{data.customerId}}">
+        <table class="table table-condensed">
+            <tbody>
+
+                <tr>
+                    <th>Id: </th>
+                    <td>
+                        <strong>{{data.id}}</strong>
+                        <input type="hidden" name="id" value="{{data.id}}" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Customer Id: </th>
+                    <td>
+                        <strong>{{data.customerId}}</strong>
+                        <input type="hidden" name="customerId" value="{{data.customerId}}" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Shop Id: </th>
+                    <td>
+                        <strong>{{data.shopId}}</strong>
+                        <input type="hidden" name="shopId" value="{{data.shopId}}" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Shop Name: </th>
+                    <td>
+                        <strong>{{data.shopName}}</strong>
+                        <input type="hidden" name="shopName" value="{{data.shopName}}" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Amount: </th>
+                    <td>
+                        <input type="number" name="customerAmount" required placeholder="Please enter the amount" value="{{data.customerAmount}}" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Shop perPrice: </th>
+                    <td>
+                        <strong>{{data.perPrice}}</strong>
+                        <input type="hidden" name="perPrice" value="{{data.perPrice}}" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Shop total Price: </th>
+                    <td>
+                        <strong>{{data.totalPrice}}</strong>
+                        <input type="hidden" name="totalPrice" value="{{data.totalPrice}}" />
+                    </td>
+                </tr>
+
+            </tbody>
+
+            <tfooter>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Save"
+                            class="btn btn-success">
+                        <input type="button" value="Cancel" class="btn btn-danger" onclick="backShoppingCart('{{data.customerId}}')">
+                    </td>
+                </tr>
+            </tfooter>
+
+        </table>
+    </form>
+</div>

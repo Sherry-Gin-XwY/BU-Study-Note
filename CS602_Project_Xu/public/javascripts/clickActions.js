@@ -28,8 +28,22 @@ function cancelRegister() {
     window.location.href = '/homepage';
 }
 
+// -> Carts
+function viewChart(customerId) {
+    window.location.href = '/customerShopPage/shoppingCart/'+customerId;
+}
+
+// -> Back to customer shop list
+function backShopList(customerId) {
+    window.location.href = '/customerShopPage/'+customerId;
+}
+
+// -> Cancel customer edit shop
+function backShoppingCart(customerId) {
+    window.location.href = '/customerShopPage/shoppingCart/'+customerId;
+}
+
 // Cancel Add Shop to the cart
-// TODO: need to identifi the id
 function cancelAddShopToCart(customerId) {
     window.location.href = '/customerShopPage/'+customerId;
 }
