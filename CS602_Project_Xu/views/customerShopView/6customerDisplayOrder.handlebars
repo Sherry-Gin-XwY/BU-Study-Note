@@ -4,16 +4,6 @@
             <thead>
                 <tr>
                     <td>
-                        <button class="btn btn-primary" onclick="viewChart('{{customerId}}')">View Carts</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <button class="btn btn-primary" onclick="viewOrder('{{customerId}}')">View Orders</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
                         <button class="btn btn-danger" onClick="logout();">Logout</button>
                     </td>
                 </tr>
@@ -23,10 +13,8 @@
             {{#if data}}
             <thread>
                 <tr style=font-size:30px>
-                    <th>Shop Id</th>
+                    <th>OrderId</th>
                     <th>Shop Name</th>
-                    <th>Amount</th>
-                    <th>Price</th>
                     <th>Operation</th>
                 </tr>
             </thread>
@@ -39,17 +27,15 @@
                 <input type="hidden" name="customerId" value="{{customerId}}">
                 {{#each data}}
                 <tr>
-                    <td>{{this.id}}</td>
-                    <td>{{this.shopName}}</td>
-                    <td>{{this.amount}}</td>
-                    <td>{{this.price}}</td>
+                    <td>{{this.orderId}}</td>
+                    <td>{{this.shops}}</td>
 
                     {{!-- hide the value need to pass--}}
 
                     <input type="hidden" name="shopId" value="{{this.id}}">
                     <input type="Hidden" name="shopName" value="{{this.shopName}}">
                     <td>
-                        <a href="/customerShopPage/addToChart/{{this.customerId}}/{{this.id}}">Add To Cart</a>
+                        <a href="/">View</a>
                     </td>
                 </tr>
                 {{/each}}

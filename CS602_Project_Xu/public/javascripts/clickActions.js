@@ -33,6 +33,11 @@ function viewChart(customerId) {
     window.location.href = '/customerShopPage/shoppingCart/'+customerId;
 }
 
+// -> Orders
+function viewOrder(customerId) {
+    window.location.href = '/customerShopPage/displayOrder/'+customerId;
+}
+
 // -> Back to customer shop list
 function backShopList(customerId) {
     window.location.href = '/customerShopPage/'+customerId;

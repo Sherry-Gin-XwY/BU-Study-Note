@@ -19,6 +19,7 @@
             {{#if data}}
             <thread>
                 <tr style=font-size:30px>
+                    <th>Shop Id</th>
                     <th>Shop Name</th>
                     <th>Amount</th>
                     <th>Price</th>
@@ -33,6 +34,7 @@
             <tbody>
                 {{#each data}}
                 <tr>
+                    <td>{{this.id}}</td>
                     <td>{{this.shopName}}</td>
                     <td>{{this.amount}}</td>
                     <td>{{this.price}}</td>
