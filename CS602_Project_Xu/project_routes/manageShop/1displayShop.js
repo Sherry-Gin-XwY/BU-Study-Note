@@ -14,6 +14,7 @@ module.exports = async (req, res, next) => {
             id: emp._id,
             shopName: emp.shopName,
             amount: emp.amount,
+            price: emp.price
         };
     });
 

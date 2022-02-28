@@ -8,11 +8,15 @@
                     </td>
                 </tr>
             </thead>
+            {{!-- TODO: just save for testing --}}
+            <p>Customer id: <Strong>{{customerId}}</Strong></p>
             {{#if data}}
             <thread>
                 <tr style=font-size:30px>
+                    <th>Shop Id</th>
                     <th>Shop Name</th>
                     <th>Amount</th>
+                    <th>Price</th>
                     <th>Operation</th>
                 </tr>
             </thread>
@@ -22,12 +26,20 @@
             </tr>
             {{/if}}
             <tbody>
+                <input type="hidden" name="customerId" value="{{customerId}}">
                 {{#each data}}
                 <tr>
+                    <td>{{this.id}}</td>
                     <td>{{this.shopName}}</td>
                     <td>{{this.amount}}</td>
+                    <td>{{this.price}}</td>
+
+                    {{!-- hide the value need to pass--}}
+
+                    <input type="hidden" name="shopId" value="{{this.id}}">
+                    <input type="Hidden" name="shopName" value="{{this.shopName}}">
                     <td>
-                        <a href="/customers/addCart">Add to Cart</a>
+                        <a href="/customerShopPage/addToChart/{{this.customerId}}/{{this.id}}">Add To Cart</a>
                     </td>
                 </tr>
                 {{/each}}

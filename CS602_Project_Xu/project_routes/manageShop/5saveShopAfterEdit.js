@@ -15,6 +15,7 @@ module.exports = async (req, res, next) => {
 
             shop.shopName = req.body.shopName;
             shop.amount = req.body.amount;
+            shop.price = req.body.price;
 
             shop.save(function (err) {
                 if (err)

@@ -56,11 +56,15 @@ router.route("/deleteUser").delete(deleteUser);
 // 顾客（Customer）
 // customer shops modules (定义customer的router)
 var displayCustomerShops = require("./customerShop/1displayShop");
+var displayAddToCart = require("./customerShop/2displayAddToCart");
+var saveAddToCart = require("./customerShop/3saveAddToCart");
 
 // customer shop auth
 // display customer shops page
 router.get('/customerShopPage/:id', displayCustomerShops);
-
+router.get('/customerShopPage/addToChart/:customerId/:id', displayAddToCart);
+// post to add customer shop to cart page
+router.post('/customerShopPage/addToChart/:customerId',      saveAddToCart);
 
 
 module.exports = router;

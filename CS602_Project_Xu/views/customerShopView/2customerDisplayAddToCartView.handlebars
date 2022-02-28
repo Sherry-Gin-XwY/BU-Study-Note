@@ -1,0 +1,58 @@
+<div class="table-responsive">
+    <form method="post" action="/customerShopPage/addToChart/{{data.customerId}}">
+        <table class="table table-condensed">
+            <tbody>
+
+                <tr>
+                    <th>Customer Id: </th>
+                    <td>
+                        <strong>{{data.customerId}}</strong>
+                        <input type="hidden" name="customerId" value="{{data.customerId}}" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Shop Id: </th>
+                    <td>
+                        <strong>{{data.id}}</strong>
+                        <input type="hidden" name="shopId" value="{{data.id}}" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Shop Name: </th>
+                    <td>
+                        <strong>{{data.shopName}}</strong>
+                        <input type="hidden" name="shopName" value="{{data.shopName}}" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Amount: </th>
+                    <td><input type="number" name="customerAmount" required placeholder="Please enter the amount"></td>
+                </tr>
+
+                <tr>
+                    <th>Shop price: </th>
+                    <td>
+                        <strong>{{data.price}}</strong>
+                        <input type="hidden" name="price" value="{{data.price}}" />
+                    </td>
+                </tr>
+
+            </tbody>
+
+            <tfooter>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Save"
+                            class="btn btn-success">
+                        <input type="button" value="Cancel" class="btn btn-danger" onclick="cancelAddShopToCart()">
+                    </td>
+                </tr>
+            </tfooter>
+
+        </table>
+    </form>
+</div>

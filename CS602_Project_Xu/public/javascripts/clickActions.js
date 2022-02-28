@@ -27,3 +27,9 @@ function toTheRegister() {
 function cancelRegister() {
     window.location.href = '/homepage';
 }
+
+// Cancel Add Shop to the cart
+// TODO: need to identifi the id
+function cancelAddShopToCart() {
+    window.location.href = '/..';
+}

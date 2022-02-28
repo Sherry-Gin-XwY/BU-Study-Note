@@ -8,6 +8,7 @@ module.exports = async (req, res, next) => {
     var shop = new Shop({
         shopName: req.body.sName,
         amount: req.body.sAmount,
+        price: req.body.sPrice
     });
 
     shop.save(function (err) {

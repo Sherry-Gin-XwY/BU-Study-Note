@@ -28,6 +28,7 @@ let Schema = mongoose.Schema;
 let shopSchema = new Schema({
     shopName: String,
     amount: Number,
+    price: Number,
 }, {
     collection: 'shops_Xu'
 });
