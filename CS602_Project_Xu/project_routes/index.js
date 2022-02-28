@@ -61,6 +61,7 @@ var saveAddToCart = require("./customerShop/3saveAddToCart");
 var displayShoppingCart = require("./customerShop/4displayShoppingCart");
 var editShopInCart = require("./customerShop/5editShopInCart");
 var saveEditShopCart = require("./customerShop/6saveEditShopInCart");
+var deleteShopInCart = require("./customerShop/7deleteShopInCart");
 
 // customer shop auth
 // display customer shops page
@@ -73,5 +74,8 @@ router.get('/customerShopPage/shoppingCart/:customerId',  displayShoppingCart);
 // Edit shopping cart
 router.get('/customerShopPage/shoppingCart/customerShoppingCartEdit/:customerId/:id', editShopInCart);
 router.post('/customerShopPage/shoppingCart/customerShoppingCartEdit/:customerId', saveEditShopCart);
+
+// Delete shop in Shopping cart
+router.get('/customerShopPage/shoppingCart/customerDeleteShopInCart/:customerId/:id', deleteShopInCart);
 
 module.exports = router;
