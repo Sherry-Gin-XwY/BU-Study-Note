@@ -48,5 +48,14 @@
                 {{/each}}
             </tbody>
         </table>
+                    <tfooter>
+                <tr>
+                    <td>
+                        <form action="/customerShopPage/shoppingCart/checkout/{{customerId}}" method="post">
+                        <button type="submit" class="btn btn-primary" >CheckOut</button>
+                        </form>
+                    </td>
+                </tr>
+            </tfooter>
     </div>
 </div>

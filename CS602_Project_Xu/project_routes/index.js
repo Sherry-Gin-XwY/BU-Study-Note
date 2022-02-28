@@ -12,6 +12,7 @@ var displayShop             = require("./manageShop/1displayShop");             
 var editShop                = require("./manageShop/4editShop");                   // 1editShop.js
 var saveShop 			          = require("./manageShop/3saveShop");                   // 1saveShop.js
 var saveShopAfterEdit       = require("./manageShop/5saveShopAfterEdit");          // 1saveShopAfterEdit.js
+var displayUsers            = require("./manageShop/8displayUser");
 
 // router specs (控制每个网站的去向)
 
@@ -32,6 +33,8 @@ router.post('/shops/manageShopEdit/',      saveShopAfterEdit);
 // manage to delete shop
 router.get('/shops/manageShopDelete/:id',    deleteShop);
 router.post('/shops/manageShopDelete',        deleteShopAfterConfirm);
+router.get('/shops/manageUsers', displayUsers);
+
 
 // home Page modules (定义主页认证的router)
 var displayHomePage = require("./homePage/1displayHomePage");
@@ -51,7 +54,7 @@ router.route("/homepage").post(login);
 // Update router
 router.route("/update").put(update);
 // Delete router
-router.route("/deleteUser").delete(deleteUser);
+router.route("/deleteUser/:id").post(deleteUser);
 
 // 顾客（Customer）
 // customer shops modules (定义customer的router)
@@ -63,6 +66,7 @@ var editShopInCart = require("./customerShop/5editShopInCart");
 var saveEditShopCart = require("./customerShop/6saveEditShopInCart");
 var deleteShopInCart = require("./customerShop/7deleteShopInCart");
 var confirmDeleteShopInCart = require("./customerShop/8deleteAfterComfirm")
+var checkout = require("./customerShop/9CheckoutConfirm")
 
 // customer shop auth
 // display customer shops page
@@ -78,5 +82,10 @@ router.post('/customerShopPage/shoppingCart/customerShoppingCartEdit/:customerId
 
 // Delete shop in Shopping cart
 router.get('/customerShopPage/shoppingCart/customerDeleteShopInCart/:customerId/:id', deleteShopInCart);
-router.post('/customerShopPage/shoppingCart/customerDeleteShopInCart/:customerId', confirmDeleteShopInCart)
+router.post('/customerShopPage/shoppingCart/customerDeleteShopInCart/:customerId', confirmDeleteShopInCart);
+
+// Checkout shops in Shopping cart
+router.post('/customerShopPage/shoppingCart/checkout/:customerId', checkout);
+
+
 module.exports = router;

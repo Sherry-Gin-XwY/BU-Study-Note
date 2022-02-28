@@ -1,0 +1,44 @@
+<div>
+    <div class="table-responsive">
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <td>
+                        <button class="btn btn-danger" onClick="cancelAddShop();">Back</button>
+                    </td>
+                </tr>
+            </thead>
+            {{#if data}}
+            <thread>
+                <tr style=font-size:30px>
+                    <th>User Id</th>
+                    <th>role</th>
+                    <th>user Name</th>
+                    <th>Operation</th>
+                </tr>
+            </thread>
+            {{else}}
+            <tr>
+                <td colspan="3">No Shop found ... Add One!</td>
+            </tr>
+            {{/if}}
+            <tbody>
+                {{#each data}}
+                <tr>
+                    <td>{{this.id}}</td>
+                    <td>{{this.role}}</td>
+                    <td>{{this.username}}</td>
+                    <td>
+                        <a href="">Edit</a> |
+                        <form action="/deleteUser/{{this.id}}" method="post">
+                        <button type="submit">Delete User</button>
+                        </form>
+                        {{!-- <a href="/deleteUser/{{this.id}}">Delete</a> --}}
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+
+        </table>
+    </div>
+</div>

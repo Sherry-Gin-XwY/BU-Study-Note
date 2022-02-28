@@ -51,3 +51,7 @@ function cancelAddShopToCart(customerId) {
 function logout() {
     window.location.href = '/';
 }
+
+function toManageUsers() {
+    window.location.href = '/shops/manageUsers';
+}
