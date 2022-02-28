@@ -47,3 +47,7 @@ function backShoppingCart(customerId) {
 function cancelAddShopToCart(customerId) {
     window.location.href = '/customerShopPage/'+customerId;
 }
+
+function logout() {
+    window.location.href = '/';
+}
