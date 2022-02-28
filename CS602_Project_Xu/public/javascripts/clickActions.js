@@ -30,6 +30,6 @@ function cancelRegister() {
 
 // Cancel Add Shop to the cart
 // TODO: need to identifi the id
-function cancelAddShopToCart() {
-    window.location.href = '/..';
+function cancelAddShopToCart(customerId) {
+    window.location.href = '/customerShopPage/'+customerId;
 }
