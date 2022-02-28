@@ -8,7 +8,9 @@ module.exports = async (req, res, next) => {
     // TODO: fill in the code
     let customerId = req.params.customerId;
 
-    let Carts = await Cart.find({});
+    let Carts = await Cart.find(
+        {customerId: customerId}
+    );
 
     let result = Carts.map( emp => {
         return {
